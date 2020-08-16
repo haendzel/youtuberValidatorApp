@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="YoutuberApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Youtuber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAz-rB-xOP">
+                                <rect key="frame" x="50" y="94" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hvk-4C-hEa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" name="youtubeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-1d-mme">
+                                <rect key="frame" x="50" y="156" width="314" height="8"/>
+                                <color key="backgroundColor" name="youtubeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="eVG-Um-AJU"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write id or link from Youtube video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-bq-pc1">
+                                <rect key="frame" x="50" y="214" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="p2G-O0-Sw1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaO-G5-Swa">
+                                <rect key="frame" x="160" y="274" width="94" height="41"/>
+                                <color key="backgroundColor" name="youtubeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Get video">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qna-iP-7Uk"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDj-6v-dz6" customClass="WKYTPlayerView">
+                                <rect key="frame" x="0.0" y="365" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BDj-6v-dz6" secondAttribute="height" multiplier="16:9" id="SUf-kV-jiN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1E4-1d-mme" firstAttribute="leading" secondItem="AAz-rB-xOP" secondAttribute="leading" id="3qU-DK-j7l"/>
+                            <constraint firstItem="IBX-bq-pc1" firstAttribute="leading" secondItem="1E4-1d-mme" secondAttribute="leading" id="4ub-Jl-JGc"/>
+                            <constraint firstItem="AAz-rB-xOP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="FPX-6I-Myv"/>
+                            <constraint firstItem="IBX-bq-pc1" firstAttribute="trailing" secondItem="1E4-1d-mme" secondAttribute="trailing" id="OTe-Ya-KJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BDj-6v-dz6" secondAttribute="trailing" id="Rjz-RU-1v8"/>
+                            <constraint firstItem="BDj-6v-dz6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WE7-nr-EJV"/>
+                            <constraint firstItem="1E4-1d-mme" firstAttribute="top" secondItem="AAz-rB-xOP" secondAttribute="bottom" constant="12" id="Yms-eQ-Pn4"/>
+                            <constraint firstItem="ZaO-G5-Swa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fC8-RN-EV1"/>
+                            <constraint firstItem="IBX-bq-pc1" firstAttribute="top" secondItem="1E4-1d-mme" secondAttribute="bottom" constant="50" id="fLl-DM-o4H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AAz-rB-xOP" secondAttribute="trailing" constant="50" id="fa6-bo-d49"/>
+                            <constraint firstItem="BDj-6v-dz6" firstAttribute="top" secondItem="ZaO-G5-Swa" secondAttribute="bottom" constant="50" id="h0w-3Z-zIJ"/>
+                            <constraint firstItem="ZaO-G5-Swa" firstAttribute="top" secondItem="IBX-bq-pc1" secondAttribute="bottom" constant="20" id="jh3-vy-LDT"/>
+                            <constraint firstItem="AAz-rB-xOP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="mx7-0b-ZoV"/>
+                            <constraint firstItem="IBX-bq-pc1" firstAttribute="centerX" secondItem="ZaO-G5-Swa" secondAttribute="centerX" id="s40-z9-o6t"/>
+                            <constraint firstItem="1E4-1d-mme" firstAttribute="trailing" secondItem="AAz-rB-xOP" secondAttribute="trailing" id="vnG-0t-1oj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="TextField" destination="IBX-bq-pc1" id="fWL-aM-PfG"/>
+                        <outlet property="alignTopHeader" destination="FPX-6I-Myv" id="3mi-xJ-GfV"/>
+                        <outlet property="mainTitleLabel" destination="AAz-rB-xOP" id="Vce-8y-3Oi"/>
+                        <outlet property="playVideoButton" destination="ZaO-G5-Swa" id="58k-tW-1F5"/>
+                        <outlet property="textField" destination="IBX-bq-pc1" id="BUV-uH-Ial"/>
+                        <outlet property="webPlayerView" destination="BDj-6v-dz6" id="gly-OC-rk0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="youtubeColor">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
